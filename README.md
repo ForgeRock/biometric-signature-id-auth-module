@@ -23,7 +23,7 @@ Per instructions located here:  https://backstage.forgerock.com/docs/am/6/saml2-
 [**Procedure 2.3. To Configure a Remote Identity Provider**](https://backstage.forgerock.com/docs/am/6/saml2-guide/#configure-remote-idp)
 
 1. Obtain the identity provider metadata or the URL where you can obtain it.
-2. Under Realms \&gt; _Realm Name_ \&gt; Dashboard \&gt; Configure SAMLv2 Providers, click Configure Remote Identity Provider.
+2. Under Realms >; _Realm Name_ >; Dashboard >; Configure SAMLv2 Providers, click Configure Remote Identity Provider.
 3. Provide the identity provider metadata or link to obtain metadata.  - example: &quot;https://verifyexpress.com/interface/saml/[YOUR-ENTITY]/metadata.aspx&quot;
 
 The remote identity provider&#39;s metadata might contain more than one KeyDescriptor elements. If it does, the hosted AM service provider will validate assertions from the identity provider against certificates with key descriptors with an appropriateuse attribute. Incoming assertions that cannot be validated against any of the certificates will be rejected by the hosted service provider.
@@ -39,14 +39,14 @@ Ensure the MetaAlias is unique for each provider configured in a CoT and in the 
 ![BioSig-ID Steps](/imgs/13.png)
  
 1. If you want to use dynamic profile creation with auto-federation to federate identities, configure the required options:
-  - To configure dynamic profile creation, navigate to Configure \&gt; Authentication \&gt; Core Attributes.
-  - To configure auto-federation, navigate to Realms \&gt; _Realm Name_ \&gt; Applications \&gt; Federation \&gt; Entity Providers \&gt;_Service Provider Name_ \&gt; Assertion Processing \&gt; Auto Federation.
+  - To configure dynamic profile creation, navigate to Configure >; Authentication >; Core Attributes.
+  - To configure auto-federation, navigate to Realms >; _Realm Name_ >; Applications >; Federation >; Entity Providers >;_Service Provider Name_ >; Assertion Processing >; Auto Federation.
 2. Change the Assertion Consumer Service locations in the service provider configuration. The default locations support standalone mode. Therefore, you must change the locations when implementing integrated mode.
 
 Change the locations as follows:
 
 1.
-  - In the AM console, navigate to Realms \&gt; _Realm Name_ \&gt; Applications \&gt; Federation \&gt; Entity Providers \&gt; _Service Provider Name_ \&gt; Services \&gt; Assertion Consumer Service.
+  - In the AM console, navigate to Realms >; _Realm Name_ >; Applications >; Federation >; Entity Providers >; _Service Provider Name_ >; Services >; Assertion Consumer Service.
   - Change the location of the HTTP-Artifact consumer service to use AuthConsumer rather than Consumer. For example, if the location is http://www.sp.com:28080/openam/Consumer/metaAlias/sp, change it to http://www.sp.com:28080/openam/AuthConsumer/metaAlias/sp.
   - Similarly, change the location for the HTTP-POST consumer service to use AuthConsumer rather than Consumer.
 
@@ -54,9 +54,9 @@ Note that you do not need to change the location for the PAOS service because in
 
 1.
   - Click Save to save the changes to the endpoints.
-2. If the AM server configured as the service provider runs as part of an AM site, enable SAML v2.0 failover. In the AM console, navigate to Configure \&gt; Global Services, click SAML v2 Service Configuration, check the Enable SAMLv2 failover checkbox, and then save your changes.
+2. If the AM server configured as the service provider runs as part of an AM site, enable SAML v2.0 failover. In the AM console, navigate to Configure >; Global Services, click SAML v2 Service Configuration, check the Enable SAMLv2 failover checkbox, and then save your changes.
 3. Create a SAML2 authentication module:
-  - In the AM console, navigate to Realms \&gt; _Realm Name_ \&gt; Authentication \&gt; Modules.
+  - In the AM console, navigate to Realms >; _Realm Name_ >; Authentication >; Modules.
   - Specify a name [example: mySAMLChain] for the module, and specify the module type as SAML2.
   - Click Create.
   - Configure the SAML2 authentication module options by adding the &quot;IdP Entity ID&quot; (provided by BioSig-ID™) and changing the request binding to HTTP-Post
