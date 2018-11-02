@@ -45,15 +45,13 @@ Ensure the MetaAlias is unique for each provider configured in a CoT and in the 
 
 Change the locations as follows:
 
-1.
-  - In the AM console, navigate to Realms > _Realm Name_ > Applications > Federation > Entity Providers > _Service Provider Name_ > Services > Assertion Consumer Service.
+1.In the AM console, navigate to Realms > _Realm Name_ > Applications > Federation > Entity Providers > _Service Provider Name_ > Services > Assertion Consumer Service.
   - Change the location of the HTTP-Artifact consumer service to use AuthConsumer rather than Consumer. For example, if the location is http://www.sp.com:28080/openam/Consumer/metaAlias/sp, change it to http://www.sp.com:28080/openam/AuthConsumer/metaAlias/sp.
   - Similarly, change the location for the HTTP-POST consumer service to use AuthConsumer rather than Consumer.
 
 Note that you do not need to change the location for the PAOS service because integrated mode does not support the PAOS binding.
 
-1.
-  - Click Save to save the changes to the endpoints.
+1.Click Save to save the changes to the endpoints.
 2. If the AM server configured as the service provider runs as part of an AM site, enable SAML v2.0 failover. In the AM console, navigate to Configure > Global Services, click SAML v2 Service Configuration, check the Enable SAMLv2 failover checkbox, and then save your changes.
 3. Create a SAML2 authentication module:
   - In the AM console, navigate to Realms > _Realm Name_ > Authentication > Modules.
